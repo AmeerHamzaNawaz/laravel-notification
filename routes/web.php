@@ -4,6 +4,7 @@ use App\Jobs\SendEmailJob;
 use App\Jobs\SendWelcomeEmailJob;
 use App\Notifications\TestEnrollment;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\TestsController;
 
 
@@ -21,6 +22,8 @@ use App\Http\Controllers\TestsController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('form', FormController::class);
 
 Route::get('test', function () {
     $details['name'] = 'Md Obydullah';
